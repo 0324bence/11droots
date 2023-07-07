@@ -5,6 +5,11 @@
 </script>
 
 <div id="root">
+    <form class="inputs" method="GET" action="./">
+        <input type="text" placeholder="IP" name="ip" />
+        <input type="text" placeholder="PORT" name="port" />
+        <button type="submit">Send</button>
+    </form>
     <h1>{data.motd}</h1>
     <h2>{data.players.now} / {data.players.max}</h2>
     <div id="table">
@@ -45,6 +50,38 @@
         align-items: center;
         gap: 1rem;
         padding-bottom: 1rem;
+    }
+
+    .inputs {
+        width: 30vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .inputs input {
+        width: 45%;
+        height: 3rem;
+        border: 0.2rem solid hsl(0, 0%, 92%);
+        border-radius: 0.5rem;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 92%);
+        background-color: hsl(0, 0%, 20%);
+    }
+    .inputs button {
+        width: 8rem;
+        height: 3rem;
+        border: 0.2rem solid hsl(0, 0%, 92%);
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 92%);
+        background-color: hsl(0, 0%, 20%);
+        cursor: pointer;
     }
     h1 {
         text-align: center;
@@ -100,6 +137,9 @@
     }
     @media screen and (max-width: 768px) {
         #table {
+            width: 100%;
+        }
+        .inputs {
             width: 100%;
         }
     }
